@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "5b4e9e14-0db1-4846-87ee-2aa37d6afb6b",
+		"name": "Nest Foundation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2492101"
+	},
+	"item": [
+		{
+			"name": "Coffees",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/coffees?limit=2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"coffees"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/coffees/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"coffees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Coffee 3\",\r\n    \"brand\": \"Brand 3\",\r\n    \"flavors\": [\r\n        \"chocolate\",\r\n        \"vanilla\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/coffees",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"coffees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update One by ID",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Coffee 3 up\",\r\n    \"brand\": \"Brand 3 up\"\r\n    // \"flavors\": [\r\n    //     \"chocolate\",\r\n    //     \"vanilla\"\r\n    // ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/coffees/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"coffees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete One by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/coffees/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"coffees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
